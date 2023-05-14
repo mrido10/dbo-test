@@ -53,6 +53,12 @@ POST http://localhost:3003/customer
 GET http://localhost:3003/customer?search=nama&page=1
 ```
 
+#### Detail
+```
+GET http://localhost:3003/customer/2
+```
+2 adalah id dari customer
+
 #### Update
 ```
 PUT http://localhost:3003/customer
@@ -94,5 +100,36 @@ POST http://localhost:3003/order
 #### List and Search
 ```
 GET http://localhost:3003/order?page=1&searchCustomer=name&searchProduct=komix
+```
+
+#### Detail
+```
+GET http://localhost:3003/order/2
+```
+2 adalah id dari order
+
+#### Update
+```
+PUT http://localhost:3003/order
+```
+
+```json
+{
+    "id": 2,
+    "customer_id": 4,
+    "product_id": 1,
+    "total_order": 30
+}
+```
+
+#### Update
+```
+DELETE http://localhost:3003/order
+```
+
+```json
+{
+    "id": 2
+}
 ```
 

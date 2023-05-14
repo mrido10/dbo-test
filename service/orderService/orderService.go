@@ -16,3 +16,12 @@ func (e order) Insert(c *gin.Context) {
 func (e order) List(c *gin.Context) {
 	e.JWTValidations(c, GetList)
 }
+func (e order) Update(c *gin.Context) {
+	e.JWTValidations(c, UpdateOrder)
+}
+func (e order) Delete(c *gin.Context) {
+	e.JWTValidations(c, DeleteOrder)
+}
+func (e order) View(c *gin.Context) {
+	e.JWTValidations(c, GetDetail)
+}

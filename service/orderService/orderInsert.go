@@ -18,7 +18,15 @@ func InsertOrder(c *gin.Context, dtIn dto.DataIN) (_ interface{}, err error) {
 	if err != nil {
 		return
 	}
+	order, err := validateInsertOrUpdate(od)
+	if err != nil {
+		return
+	}
+	err = orderDao.InsertOrder(dtIn.Tx, order)
+	return
+}
 
+func validateInsertOrUpdate(od dto.OrderIn) (order model.OrderModel, err error) {
 	conf := config.Configure
 	cust, err := customerDao.GetCustomerById(od.CustomerId, true)
 	if err != nil {
@@ -36,13 +44,11 @@ func InsertOrder(c *gin.Context, dtIn dto.DataIN) (_ interface{}, err error) {
 	}
 
 	amount := prod.Price.Float64 * float64(od.TotalOrder)
-	order := model.OrderModel{
+	order = model.OrderModel{
 		CustomerId: cust.Id,
 		ProductId:  prod.Id,
 		TotalOrder: sql.NullInt32{Int32: od.TotalOrder},
 		Amount:     sql.NullFloat64{Float64: amount},
 	}
-
-	err = orderDao.InsertOrder(dtIn.Tx, order)
 	return
 }

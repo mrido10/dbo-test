@@ -1,12 +1,12 @@
 package util
 
 import (
-	"dbo-test/model"
+	"dbo-test/model/dto"
 	"github.com/gin-gonic/gin"
 )
 
 func Response(c *gin.Context, statusCode int, msg string, data interface{}) {
-	c.JSON(statusCode, model.Response{
+	c.JSON(statusCode, dto.Response{
 		Message: msg,
 		Data:    data,
 		Code:    statusCode,

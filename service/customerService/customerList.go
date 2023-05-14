@@ -9,7 +9,7 @@ import (
 )
 
 func GetList(c *gin.Context, _ dto.DataIN) (listData interface{}, err error) {
-	page, err := util.GetPageLimitParam(c)
+	page, err := util.GetPageParam(c)
 	if err != nil {
 		return
 	}

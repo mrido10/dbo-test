@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func GetPageLimitParam(c *gin.Context) (page int, err error) {
+func GetPageParam(c *gin.Context) (page int, err error) {
 	pg := c.Query("page")
 	if pg == "" {
 		err = fmt.Errorf("%s: page mandatory", config.Configure.Source.Name)

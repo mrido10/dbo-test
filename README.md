@@ -53,13 +53,6 @@ POST http://localhost:3003/customer
 GET http://localhost:3003/customer?search=nama&page=1
 ```
 
-```json
-{
-    "name": "testing nama",
-    "email": "email@mail.com"
-}
-```
-
 #### Update
 ```
 PUT http://localhost:3003/customer
@@ -74,7 +67,7 @@ PUT http://localhost:3003/customer
 ```
 
 #### Delete
-```
+``` 
 DELETE http://localhost:3003/customer
 ```
 
@@ -84,4 +77,22 @@ DELETE http://localhost:3003/customer
 }
 ```
 
+### Order 
+#### Insert
+```
+POST http://localhost:3003/order
+```
+
+```json
+{
+    "customer_id": 4,
+    "product_id": 1,
+    "total_order": 20
+}
+```
+
+#### List and Search
+```
+GET http://localhost:3003/order?page=1&searchCustomer=name&searchProduct=komix
+```
 

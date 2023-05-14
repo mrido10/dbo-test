@@ -11,6 +11,7 @@ func Start() {
 	route := gin.Default()
 	controller.Token(route, "token")
 	controller.Customer(route, "customer")
+	controller.Order(route, "order")
 	if err := route.Run(":" + config.Configure.Server.Port); err != nil {
 		log.Fatal(err)
 	}

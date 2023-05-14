@@ -43,6 +43,12 @@ CREATE TABLE IF NOT EXISTS product
     CONSTRAINT product_pkey_seq_id PRIMARY KEY (id)
 );
 
+INSERT INTO product(name, price)
+VALUES('Enervon Active 30Tbl', 40000),
+('Komix Herbal 4Tube', 10000),
+('Sedap Kecap Manis 135ml', 7000),
+('ABC Sambal Extra Pedas', 12000);
+
 CREATE SEQUENCE IF NOT EXISTS order_pkey_seq;
 CREATE TABLE IF NOT EXISTS "order"
 (

@@ -1,14 +1,12 @@
 package customerService
 
 import (
-	"dbo-test/model"
 	"dbo-test/util"
 	"github.com/gin-gonic/gin"
 )
 
 type customer struct {
 	util.Auth
-	model.Common
 }
 
 var Customer = customer{}

@@ -1,0 +1,12 @@
+server:
+  host: localhost
+  port: 3003
+  protocol: http
+jwt:
+  key: k4MadoT4n7IR0
+hash:
+  secret: secret
+postgres:
+  address: host=localhost port=5433 user=postgres password=paramadaksa dbname=dbo_test sslmode=disable
+source:
+  name: dbo-test
